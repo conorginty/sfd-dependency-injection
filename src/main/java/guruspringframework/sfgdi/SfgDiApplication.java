@@ -15,14 +15,10 @@ public class SfgDiApplication {
 		// Grab our "Bean" (i.e. the Controller) from the Spring Context - this is Inversion of Control
 		ApplicationContext context = SpringApplication.run(SfgDiApplication.class, args);
 
+		System.out.println("=== MyController - Primary Bean ===");
 		// We can ask this context that we've stored for an instance of my Controller
-		// Option 1;
 		MyController myController = context.getBean(MyController.class);
-		// Option 2;
-//		MyController myController = (MyController) context.getBean("myController");
-
-		String greeting = myController.sayHello(); // Hello world!!!
-		System.out.println(greeting); // Hi, Folks!
+		System.out.println(myController.sayHello());
 
 		System.out.println("=== Property-Injected Controller ===");
 		PropertyInjectedController propertyInjectedController = context.getBean(PropertyInjectedController.class);
