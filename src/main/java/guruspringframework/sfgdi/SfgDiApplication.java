@@ -1,6 +1,9 @@
 package guruspringframework.sfgdi;
 
+import guruspringframework.sfgdi.controllers.ConstructorInjectedController;
 import guruspringframework.sfgdi.controllers.MyController;
+import guruspringframework.sfgdi.controllers.PropertyInjectedController;
+import guruspringframework.sfgdi.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -20,6 +23,18 @@ public class SfgDiApplication {
 
 		String greeting = myController.sayHello(); // Hello world!!!
 		System.out.println(greeting); // Hi, Folks!
+
+		System.out.println("=== Property-Injected Controller ===");
+		PropertyInjectedController propertyInjectedController = context.getBean(PropertyInjectedController.class);
+		System.out.println(propertyInjectedController.getGreeting());
+
+		System.out.println("=== Setter-Injected Controller ===");
+		SetterInjectedController setterInjectedController = context.getBean(SetterInjectedController.class);
+		System.out.println(setterInjectedController.getGreeting());
+
+		System.out.println("=== Constructor-Injected Controller ===");
+		ConstructorInjectedController constructorInjectedController = context.getBean(ConstructorInjectedController.class);
+		System.out.println(constructorInjectedController.getGreeting());
 	}
 
 }
