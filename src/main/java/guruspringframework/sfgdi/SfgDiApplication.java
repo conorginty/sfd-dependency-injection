@@ -1,9 +1,6 @@
 package guruspringframework.sfgdi;
 
-import guruspringframework.sfgdi.controllers.ConstructorInjectedController;
-import guruspringframework.sfgdi.controllers.MyController;
-import guruspringframework.sfgdi.controllers.PropertyInjectedController;
-import guruspringframework.sfgdi.controllers.SetterInjectedController;
+import guruspringframework.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,9 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		// Grab our "Bean" (i.e. the Controller) from the Spring Context - this is Inversion of Control
 		ApplicationContext context = SpringApplication.run(SfgDiApplication.class, args);
+
+		I18nController i18nController = context.getBean(I18nController.class);
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("=== MyController - Primary Bean ===");
 		// We can ask this context that we've stored for an instance of my Controller
