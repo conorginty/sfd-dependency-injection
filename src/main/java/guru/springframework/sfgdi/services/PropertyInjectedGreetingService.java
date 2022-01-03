@@ -1,5 +1,6 @@
-package guruspringframework.sfgdi.services;
+package guru.springframework.sfgdi.services;
 
+import com.springframework.greetings.GreetingService;
 import org.springframework.stereotype.Service;
 
 @Service

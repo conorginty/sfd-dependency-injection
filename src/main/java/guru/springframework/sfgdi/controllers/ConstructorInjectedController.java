@@ -1,7 +1,6 @@
-package guruspringframework.sfgdi.controllers;
+package guru.springframework.sfgdi.controllers;
 
-import guruspringframework.sfgdi.services.GreetingService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.springframework.greetings.GreetingService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 

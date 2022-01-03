@@ -8,7 +8,7 @@
 		<version>2.6.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>guruspringframework</groupId>
+	<groupId>guru.springframework</groupId>
 	<artifactId>sfg-di</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sfg-di</name>

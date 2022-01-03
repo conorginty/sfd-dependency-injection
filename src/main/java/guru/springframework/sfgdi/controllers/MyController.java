@@ -1,6 +1,6 @@
-package guruspringframework.sfgdi.controllers;
+package guru.springframework.sfgdi.controllers;
 
-import guruspringframework.sfgdi.services.GreetingService;
+import com.springframework.greetings.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller // Using the Controller Stereotype makes this class a Spring-managed Component

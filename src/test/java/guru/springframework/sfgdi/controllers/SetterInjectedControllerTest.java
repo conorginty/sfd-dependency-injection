@@ -1,19 +1,19 @@
-package guruspringframework.sfgdi.controllers;
+package guru.springframework.sfgdi.controllers;
 
-import guruspringframework.sfgdi.services.PropertyInjectedGreetingService;
+import guru.springframework.sfgdi.services.SetterInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class PropertyInjectedControllerTest {
+class SetterInjectedControllerTest {
 
-    PropertyInjectedController controller;
+    SetterInjectedController controller;
 
     @BeforeEach
     void setUp() {
         // Mimicking what the Spring Framework would actually be doing
         // We're effectively acting as the IoC here
-        controller = new PropertyInjectedController();
-        controller.greetingService = new PropertyInjectedGreetingService();
+        controller = new SetterInjectedController();
+        controller.setGreetingService(new SetterInjectedGreetingService());
     }
 
     @Test
