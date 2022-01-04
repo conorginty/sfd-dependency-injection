@@ -2,6 +2,8 @@ package guru.springframework.sfgdi.config;
 
 import com.springframework.greetings.I18nEnglishGreetingService;
 import com.springframework.greetings.I18nSpanishGreetingService;
+import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
+import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.ConstructorInjectedGreetingService;
 import guru.springframework.sfgdi.services.PrimaryGreetingService;
 import guru.springframework.sfgdi.services.PropertyInjectedGreetingService;
@@ -14,10 +16,15 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 public class GreetingServiceConfig {
 
+    @Bean
+    EnglishGreetingRepository englishGreetingRepository() {
+        return new EnglishGreetingRepositoryImpl();
+    }
+
     @Profile("EN")
     @Bean("i18nService")
-    I18nEnglishGreetingService i18nEnglishGreetingService() {
-        return new I18nEnglishGreetingService();
+    I18nEnglishGreetingService i18nEnglishGreetingService(EnglishGreetingRepository englishGreetingRepository) {
+        return new I18nEnglishGreetingService(englishGreetingRepository);
     }
 
     @Profile({"ES", "default"}) // We can have multiple active beans, and by making one of the Profiles "default", this will be what's injected in when there are no Active Profiles
