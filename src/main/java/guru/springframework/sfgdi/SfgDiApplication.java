@@ -6,13 +6,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = {"guru.springframework.sfgdi", "com.springframework.greetings"})
+@ComponentScan(basePackages = {"guru.springframework.sfgdi", "com.springframework.greetings", "com.springframework.pets"})
 @SpringBootApplication
 public class SfgDiApplication {
 	// SpringApplication.run() returns back an Application context
 	public static void main(String[] args) {
 		// Grab our "Bean" (i.e. the Controller) from the Spring Context - this is Inversion of Control
 		ApplicationContext context = SpringApplication.run(SfgDiApplication.class, args);
+
+		PetController petController = context.getBean(PetController.class);
+		System.out.println(petController.getBestPet());
 
 		I18nController i18nController = context.getBean(I18nController.class);
 		System.out.println(i18nController.sayHello());

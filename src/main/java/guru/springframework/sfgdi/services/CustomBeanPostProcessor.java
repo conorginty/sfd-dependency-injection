@@ -12,7 +12,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
         if(bean instanceof LifeCycleDemoBean){
             ((LifeCycleDemoBean) bean).beforeInit();
         }
-        System.out.println("Currently inside: CustomBeanPostProcessor.postProcessBEFOREInitialization() method - beanName = " + beanName);
+//        System.out.println("Currently inside: CustomBeanPostProcessor.postProcessBEFOREInitialization() method - beanName = " + beanName);
         return bean;
     }
 
@@ -21,7 +21,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
         if(bean instanceof LifeCycleDemoBean){
             ((LifeCycleDemoBean) bean).afterInit();
         }
-        System.out.println("Currently inside: CustomBeanPostProcessor.postProcessAFTERInitialization() method - beanName = " + beanName);
+//        System.out.println("Currently inside: CustomBeanPostProcessor.postProcessAFTERInitialization() method - beanName = " + beanName);
         return bean;
     }
 }
