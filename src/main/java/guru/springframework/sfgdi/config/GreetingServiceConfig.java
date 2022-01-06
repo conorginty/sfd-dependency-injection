@@ -4,15 +4,12 @@ import com.springframework.greetings.I18nEnglishGreetingService;
 import com.springframework.greetings.I18nSpanishGreetingService;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
-import guru.springframework.sfgdi.services.ConstructorInjectedGreetingService;
 import guru.springframework.sfgdi.services.PrimaryGreetingService;
 import guru.springframework.sfgdi.services.PropertyInjectedGreetingService;
 import guru.springframework.sfgdi.services.SetterInjectedGreetingService;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
+@ImportResource("classpath:sfgdi-config.xml") // Notifies Spring of the XML config file
 @Configuration
 public class GreetingServiceConfig {
 
@@ -39,10 +36,10 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
-    @Bean
-    ConstructorInjectedGreetingService constructorInjectedGreetingService() {
-        return new ConstructorInjectedGreetingService();
-    }
+//    @Bean
+//    ConstructorInjectedGreetingService constructorInjectedGreetingService() {
+//        return new ConstructorInjectedGreetingService();
+//    }
 
     @Bean
     PropertyInjectedGreetingService propertyInjectedGreetingService() {
