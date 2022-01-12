@@ -11,7 +11,6 @@ import guru.springframework.sfgdi.services.SetterInjectedGreetingService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
-@PropertySource("classpath:datasource.properties") // Loads the Properties from the Target File into the Context to then be injected in at Runtime
 @ImportResource("classpath:sfgdi-config.xml") // Notifies Spring of the XML config file
 @Configuration
 public class GreetingServiceConfig {
