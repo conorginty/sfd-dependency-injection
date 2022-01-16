@@ -1,7 +1,22 @@
 spring:
   profiles:
-    active: dog,EN,qa
+    active:
+      - dog
+      - EN
+      - qa
+
+---
+spring:
+  profiles: dev
 guru:
-  username: YmlUserName
-  password: YmlPassword
-  jdbcUrl: YmlUrl
+  username: YmlUserName-Dev
+  password: YmlPassword-Dev
+  jdbcUrl: YmlUrl-Dev
+
+---
+spring:
+  profiles: qa
+guru:
+  username: YmlUserName-QA
+  password: YmlPassword-QA
+  jdbcUrl: YmlUrl-QA
